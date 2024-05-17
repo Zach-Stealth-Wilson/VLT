@@ -8,6 +8,7 @@ module tt_um_and(
   input clk,
   input reset,
   input ena,
+  input  wire       rst_n     // reset_n - low to reset
  // input wire A,
  // input wire B,
   output Y,
