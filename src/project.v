@@ -1,11 +1,11 @@
 /*
  * Copyright (c) 2024 Your Name
  * SPDX-License-Identifier: Apache-2.0
- */
 
-`default_nettype none
 
-module tt_um_example (
+//`default_nettype none
+
+//module tt_um_example (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -22,3 +22,4 @@ module tt_um_example (
   assign uio_oe  = 0;
 
 endmodule
+ */
