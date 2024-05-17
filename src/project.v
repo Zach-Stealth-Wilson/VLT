@@ -20,7 +20,22 @@ module tt_um_example (
   output reg clk_div8,
   output reg clk_div16
 );
+ always @(posedge clk)
+    clk_div2 <= reset ? 0 : ~clk_div2;
+	
+  always @(posedge clk_div2)
+    clk_div4 <= ~clk_div4;
+  	
 
+  always @(posedge clk_div4)
+    clk_div8 <= ~clk_div8;
+
+  always @(posedge clk_div8)
+    clk_div16 <= ~clk_div16;
+  	//assign A = clk_div2;
+  assign Y = clk_div2 & clk_div8;
+
+endmodule
   // All output pins must be assigned. If not used, assign to 0.
   assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
   assign uio_out = 0;
