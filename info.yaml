@@ -21,8 +21,8 @@ project:
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: "A"
-  ui[1]: "B"
+  ui[0]: "clk"
+  ui[1]: "reset"
   ui[2]: ""
   ui[3]: ""
   ui[4]: ""
@@ -32,10 +32,10 @@ pinout:
 
   # Outputs
   uo[0]: "Y"
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
+  uo[1]: "clk_div2"
+  uo[2]: "clk_div4"
+  uo[3]: "clk_div8"
+  uo[4]: "clk_div16"
   uo[5]: ""
   uo[6]: ""
   uo[7]: ""
