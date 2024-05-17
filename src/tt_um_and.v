@@ -7,6 +7,7 @@ flip-flop method.
 module tt_um_and(
   input clk,
   input reset,
+  input ena,
  // input wire A,
  // input wire B,
   output Y,
