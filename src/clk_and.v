@@ -1,9 +1,8 @@
 
 /*
 A clock divider in Verilog, using the cascading
-flip-flop method.
+flip-flop method TOP.
 */
-`default_nettype none
 
 module clk_and(
   input clk,
