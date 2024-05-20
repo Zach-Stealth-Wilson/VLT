@@ -4,7 +4,7 @@ A clock divider in Verilog, using the cascading
 flip-flop method TOP.
 */
 
-module clk_and(
+module tt_um_clk_and(
   input clk,
   input reset,
   output Y,
