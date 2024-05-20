@@ -47,7 +47,7 @@ module tt_um_and(
   	//assign A = clk_div2;
   assign Y = clk_div2 & clk_div8;
 
-	clk_and top(
+	tt_um_clk_and top(
 		.clk(clk),
 		.reset(ena_and_rst_n),
 		.Y(uo_out[7:6]),
