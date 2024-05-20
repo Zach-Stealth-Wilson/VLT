@@ -23,9 +23,14 @@ module tt_um_and(
 	
   // All output pins must be assigned. If not used, assign to 0.
  //assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  assign uio_out[7:0] = 0;
-  assign uio_in[7:0] = 0;
-  assign uio_oe[7:0]  = 0;
+	assign uio_out[6:0] = 0;
+	assign uio_in[7:0] = 0;
+	assign uio_oe[6:0]  = 0;
+	assign uio_oe[7]  = 0;  // enable msb to monitor enable
+	assign uio_out[7] = ena_and_rst_n;
+
+  // release reset when project enabled
+  wire ena_and_rst_n = ena & rst_n;
 	
  always @(posedge clk)
     clk_div2 <= reset ? 0 : ~clk_div2;
@@ -44,12 +49,12 @@ module tt_um_and(
 
 	clk_and top(
 		.clk(clk),
-		.reset(),
-		.Y(),
-		.clk_div2(),
-		.clk_div4(),
-		.clk_div8(),
-		.clk_div16()
+		.reset(ena_and_rst_n),
+		.Y(uo_out[7:6]),
+		.clk_div2(uo_out[5:4]),
+		.clk_div4(uo_out[3:2]),
+		.clk_div8(uo_out[2:1]),
+		.clk_div16(uo_out[1:0])
 	);
 
 
