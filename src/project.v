@@ -34,7 +34,7 @@ module tt_um_and(
   wire ena_and_rst_n = ena & rst_n;
 	
  always @(posedge clk)
-    clk_div2 <= reset ? 0 : ~clk_div2;
+	 clk_div2 <= ena_and_rst_n ? 0 : ~clk_div2;
 	
   always @(posedge clk_div2)
     clk_div4 <= ~clk_div4;
