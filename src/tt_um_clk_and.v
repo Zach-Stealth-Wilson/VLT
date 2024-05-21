@@ -48,16 +48,13 @@ module tt_um_clk_and(
   // Logic for Y output
   assign Y = clk_div2 & clk_div8;
 
-	// Initialization and signal assignment
-    initial begin
-        clk = 0;
-        forever #5 clk = ~clk;  // Clock generation
+	// Initialization and signal assignmen
 
-         ui_in = 8'h00; uio_in = 8'h00;
+	assign ui_in = 8'h00; 
+	assign uio_in = 8'h00;
        
 
-        #10 ui_in = 8'hFF;  // Assign new values
-        #10 ui_in = 8'hA5;
+       
     end
 
 endmodule
