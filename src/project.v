@@ -15,7 +15,10 @@ module tt_um_and(
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
-	
+   // Wire to use inputs in a non-functional manner
+    wire dummy_use;
+    assign dummy_use = |ui_in | |uio_in; // OR all bits of ui_in and uio_in to form a dummy signal
+
     // release reset when project enabled
     wire ena_and_rst_n = ena & rst_n;
 
