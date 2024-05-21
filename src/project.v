@@ -14,11 +14,6 @@ module tt_um_and(
     input  wire       ena,      // always 1 when the design is powered, so you can ignore it
     input  wire       clk,      // clock
     input  wire       rst_n,     // reset_n - low to reset
-      output Y,
-  output reg clk_div2,
-  output reg clk_div4,
-  output reg clk_div8,
-  output reg clk_div16
 );
 	
   // All output pins must be assigned. If not used, assign to 0.
@@ -30,23 +25,7 @@ module tt_um_and(
 	assign uio_oe[7]  = 0;  // enable msb to monitor enable
 	assign uio_out[7] = ena_and_rst_n;
 
-  // release reset when project enabled
-  wire ena_and_rst_n = ena & rst_n;
-	
- always @(posedge clk)
-	 clk_div2 <= ena_and_rst_n ? 0 : ~clk_div2;
-	
-  always @(posedge clk_div2)
-    clk_div4 <= ~clk_div4;
-  	
 
-  always @(posedge clk_div4)
-    clk_div8 <= ~clk_div8;
-
-  always @(posedge clk_div8)
-    clk_div16 <= ~clk_div16;
-  	//assign A = clk_div2;
-  assign Y = clk_div2 & clk_div8;
 
 	tt_um_clk_and top(
 		.clk(clk),
