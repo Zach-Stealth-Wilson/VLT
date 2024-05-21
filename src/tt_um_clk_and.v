@@ -12,7 +12,6 @@ module tt_um_clk_and(
   output reg clk_div4,
   output reg clk_div8,
   output reg clk_div16,
- output reg [7:0] ui_in, uio_in
 );
 
  
@@ -48,10 +47,6 @@ module tt_um_clk_and(
   // Logic for Y output
   assign Y = clk_div2 & clk_div8;
 
-	// Initialization and signal assignmen
-
-	assign ui_in = 8'h00; 
-	assign uio_in = 8'h00;
        
 
 endmodule
