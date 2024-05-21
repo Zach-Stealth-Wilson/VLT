@@ -25,6 +25,8 @@ module tt_um_and(
 	assign uio_oe[6:0]  = 0;
 	assign uio_oe[7]  = 0;  // enable msb to monitor enable
 	assign uio_out[7] = ena_and_rst_n;
+	assign uo_out[2:0] = 3'b000; // Assign default values to undriven bits
+
 	
 
 	tt_um_clk_and top(
