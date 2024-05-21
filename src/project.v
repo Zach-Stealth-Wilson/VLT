@@ -30,11 +30,11 @@ module tt_um_and(
 	tt_um_clk_and top(
 		.clk(clk),
 		.reset(ena_and_rst_n),
-		.Y(uo_out[7:6]),
-		.clk_div2(uo_out[5:4]),
-		.clk_div4(uo_out[3:2]),
-		.clk_div8(uo_out[2:1]),
-		.clk_div16(uo_out[1:0])
+		.Y(uo_out[7]),
+		.clk_div2(uo_out[6]),
+		.clk_div4(uo_out[5]),
+		.clk_div8(uo_out[4]),
+		.clk_div16(uo_out[3])
 	);
 
 
