@@ -54,7 +54,4 @@ module tt_um_clk_and(
 	assign uio_in = 8'h00;
        
 
-       
-    end
-
 endmodule
