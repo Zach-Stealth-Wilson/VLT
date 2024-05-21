@@ -8,6 +8,7 @@ module tt_um_clk_and(
   input clk,
   input reset,
   input rst_n,
+  input ena,
   output Y,
   output reg clk_div2,
   output reg clk_div4,
