@@ -12,7 +12,7 @@ module tt_um_clk_and(
   output reg clk_div4,
   output reg clk_div8,
   output reg clk_div16,
-  output reg [7:0] ui_in, uio_in;
+ output reg [7:0] ui_in, uio_in,
 );
 
  
