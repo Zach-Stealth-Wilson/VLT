@@ -35,6 +35,8 @@ module tt_um_and(
 		.clk_div4(uo_out[5]),
 		.clk_div8(uo_out[4]),
 		.clk_div16(uo_out[3])
+		.ui_in(ui_in),       // Connect this if it's an actual pin in tt_um_clk_and
+   		.uio_in(uio_in)  //
 	);
 
 
