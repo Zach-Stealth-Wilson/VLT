@@ -7,11 +7,11 @@ flip-flop method TOP.
 module tt_um_clk_and(
   input clk,
   input reset,
-  output Y,
-  output reg clk_div2,
-  output reg clk_div4,
-  output reg clk_div8,
-  output reg clk_div16
+  output [1:0] Y,
+  output reg [1:0] clk_div2,
+  output reg [1:0] clk_div4,
+  output reg [1:0] clk_div8,
+  output reg [1:0] clk_div16
 );
 
  
