@@ -16,9 +16,11 @@ SIMPLE AND GATE that recieves two 8-bit inputs "a" and "b" and outputs the 8-bit
 ## How to test |
 Update docs with use information including the "|" symbol after the double hashed sections
 
-ensure all inputs/output pins assigned in "project.v"
+Check that the clock speed in ".yaml" is eqaual to the clock speed in "test.py"
 
-make sure "project.v" instantiates TOP file of personal design using dot notation to link input and output signals to TOP verilog file.
+Ensure all inputs/output pins assigned in "project.v"
+
+Make sure "project.v" instantiates TOP file of personal design using dot notation to link input and output signals to TOP verilog file.
 
 add your "project.v" MODULE NAME to the "tb.v"
 
