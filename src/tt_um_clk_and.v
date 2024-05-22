@@ -10,7 +10,7 @@ module tt_um_clk_and(
   output [7:0] Y
 );
 
-  assign Y = a + b;
+  assign Y = a & b;
 
        
 
