@@ -20,20 +20,22 @@ Check that the clock speed in ".yaml" is eqaual to the clock speed in "test.py"
 
 Ensure all inputs/output pins assigned in "project.v"
 
-Make sure "project.v" instantiates TOP file of personal design using dot notation to link input and output signals to TOP verilog file.
+Make sure "project.v" instantiates TOP file of personal design using dot notation to link input  and output signals to TOP verilog file.
 
-add your "project.v" MODULE NAME to the "tb.v"
+Add your "project.v" MODULE NAME to the "tb.v"
 
-update "Makefile" with project source names and testbench sources if changed
+Update "Makefile" with project source names and testbench sources if changed
 
-update yaml with required information and source file names. (pinout names are from TOP verilog file, NOT "project.v")
+Update yaml with required information and source file names. (pinout names are from TOP verilog file, NOT "project.v")
 
-choose values for inputs a(ui_in) b(uio_in) and expected output Y(uo_out) that correspond to the python testbench "test.py"
-20 in binary (8-bit) is 00010100
-30 in binary (8-bit) is 00011110
-(20 & 30) in 8-bit binary equals 00010100, which is 20 in decimal
+Choose values for inputs a(ui_in) b(uio_in) and expected output Y(uo_out) that correspond to      the python testbench "test.py"
+
+    20 in binary (8-bit) is 00010100
+    30 in binary (8-bit) is 00011110
+    (20 & 30) in 8-bit binary equals 00010100, which is 20 in decimal
 
 AS SEEN IN "test.py"
+
  # Set the input values you want to test
     dut.ui_in.value = 20
     dut.uio_in.value = 30
