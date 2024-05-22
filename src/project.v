@@ -15,31 +15,22 @@ module tt_um_and(
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
-   // Wire to use inputs in a non-functional manner
-    wire dummy_use;
-    assign dummy_use = |ui_in | |uio_in; // OR all bits of ui_in and uio_in to form a dummy signal
-
-    // release reset when project enabled
-    wire ena_and_rst_n = ena & rst_n;
 
   // All output pins must be assigned. If not used, assign to 0.
  //assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
 	assign uio_out[6:0] = 0;
 	assign uio_oe[6:0]  = 0;
-	assign uio_oe[7]  = 0;  // enable msb to monitor enable
-	assign uio_out[7] = ena_and_rst_n;
-	assign uo_out[2:0] = 3'b000; // Assign default values to undriven bits
-
+	//assign uio_oe[7]  = 0;  // enable msb to monitor enable
+	//assign uio_out[7] = ena_and_rst_n;
 	
+
 
 	tt_um_clk_and top(
 		.clk(clk),
-		.reset(ena_and_rst_n),
-		.Y(uo_out[7]),
-		.clk_div2(uo_out[6]),
-		.clk_div4(uo_out[5]),
-		.clk_div8(uo_out[4]),
-		.clk_div16(uo_out[3])
+		.reset(rst_n),
+		.a(ui_in[7:0]),
+		.b(uio_in[7:0]),
+		.Y(uo_out[7:0])
 	);
 
 
