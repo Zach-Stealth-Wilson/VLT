@@ -1,6 +1,6 @@
 
 /*
-A simple add in Verilog, TOP. 
+A simple and in Verilog, TOP. 
 */
 
 module tt_um_clk_and(
